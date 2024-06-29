@@ -1,0 +1,204 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+*.lock
+*.json
+*.xml
+*.db
+*.iml
+
+# Android Studio
+.idea
+.DS_Store
+*.iml
+.idea/
+.gradle/
+build/
+local.properties
+*.class
+*.log
+*.swp
+*~.nib
+*.pyc
+*.pyo
+*.pid
+*.pid.lock
+*.orig
+__pycache__/
+*.apk
+*.ap_
+*.dex
+*.war
+*.jar
+*.keystore
+*.hprof
+*.tflite
+
+# Ignore Google Services JSON
+google-services.json
+
+# Ignore IntelliJ idea specific files
+.idea/
+*.iws
+*.ipr
+*.iml
+.idea/modules.xml
+.idea/.name
+.idea/workspace.xml
+.idea/misc.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches/
+.idea/assetWizardSettings.xml
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/gradle.xml
+.idea/libraries/
+.idea/caches/build_file_checksums.ser
+.idea/.gitignore
+
+# Ignore Android Studio specific files
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/taskArtifacts.xml
+/.idea/gradle.xml
+/.idea/vcs.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/externalNativeBuild
+*.cxx
+
+# Proguard
+proguard/
+
+# Others
+.idea/caches/
+.idea/assetWizardSettings.xml
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/scopes/scope_settings.xml
+.idea/libraries/
+.idea/gradle.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/misc.xml
+.idea/vcs.xml
+.idea/navEditor.xml
+.idea/taskArtifacts.xml
+.idea/modules.xml
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# macOS
+*.DS_Store
+*.AppleDouble
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# App files
+*.apk
+*.ap_
+*.dex
+*.obb
+*.so
+*.jar
+*.a
+*.bin
+*.lock
+
+# Java/Android
+*.class
+*.dex
+*.war
+*.jar
+*.apk
+*.ap_
+*.dSYM/
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Google Web Toolkit (GWT)
+.gwt/
+
+# IDEA
+*.iml
+.idea/
+
+# Lombok generated files
+*.lombok
+
+# Package Files #
+*.tgz
+*.gz
+*.zip
+*.tar
+*.rar
+*.7z
+*.bz2
+
+# Project Specific
+.classpath
+.project
+.settings/
+bin/
+tmp/
+target/
+
+# Eclipse
+.project
+.settings/
+.classpath
+.cproject
+.pydevproject
+.mymetadata
+*.tmproj
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.tar
+*.tar.bz2
+*.tgz
+*.gz
+
+# Keystore files
+*.jks
+*.keystore
