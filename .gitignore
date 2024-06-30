@@ -42,7 +42,7 @@ __pycache__/
 *.tflite
 
 # Ignore Google Services JSON
-google-services.json
+app/google-services.json
 
 # Ignore IntelliJ idea specific files
 .idea/
