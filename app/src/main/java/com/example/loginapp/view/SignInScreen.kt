@@ -24,9 +24,9 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(
-    onLoginClick: (String, String) -> Unit,
-    onRegisterClick: (String, String) -> Unit
+fun SignInScreen(
+    onSignInClick: (String, String) -> Unit,
+    onSignUpClick: (String, String) -> Unit
 ) {
 
     var email by remember {
@@ -106,7 +106,7 @@ fun LoginScreen(
                     }
 
                     else -> {
-                        onLoginClick(email, password)
+                        onSignInClick(email, password)
                     }
                 }
             },
@@ -129,7 +129,7 @@ fun LoginScreen(
                     }
 
                     else -> {
-                        onRegisterClick(email, password)
+                        onSignUpClick(email, password)
                     }
                 }
             },
