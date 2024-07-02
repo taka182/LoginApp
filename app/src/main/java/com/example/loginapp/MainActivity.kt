@@ -35,8 +35,11 @@ class MainActivity : ComponentActivity() {
                                 if (success) {
                                     navController.navigate("HomeScreen")
                                 } else {
-                                    Toast.makeText(context, "ログインに失敗しました", Toast.LENGTH_SHORT)
-                                        .show()
+                                    Toast.makeText(
+                                        context,
+                                        getString(R.string.failed_sign_In_message),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             }
                         },
@@ -45,8 +48,11 @@ class MainActivity : ComponentActivity() {
                                 if (success) {
                                     navController.navigate("HomeScreen")
                                 } else {
-                                    Toast.makeText(context, "新規登録に失敗しました", Toast.LENGTH_SHORT)
-                                        .show()
+                                    Toast.makeText(
+                                        context,
+                                        getString(R.string.failed_sign_up_message),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             }
                         }
@@ -74,8 +80,8 @@ class MainActivity : ComponentActivity() {
         onComplete: (Boolean) -> Unit
     ) {
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(activity) { task ->
-                onComplete(task.isSuccessful)
+            .addOnCompleteListener(activity) {
+                onComplete(it.isSuccessful)
             }
     }
 
@@ -95,8 +101,8 @@ class MainActivity : ComponentActivity() {
         onComplete: (Boolean) -> Unit
     ) {
         auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(activity) { task ->
-                onComplete(task.isSuccessful)
+            .addOnCompleteListener(activity) {
+                onComplete(it.isSuccessful)
             }
     }
 }
