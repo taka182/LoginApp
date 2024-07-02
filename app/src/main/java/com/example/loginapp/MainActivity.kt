@@ -28,10 +28,10 @@ class MainActivity : ComponentActivity() {
                 startDestination = startDestination
             ) {
                 composable(route = "SignInScreen") {
-                    val context = LocalContext.current as ComponentActivity
+                    val context = LocalContext.current
                     SignInScreen(
                         onSignInClick = { email, password ->
-                            signIn(auth, email, password, context) { success ->
+                            signIn(auth, email, password) { success ->
                                 if (success) {
                                     navController.navigate("HomeScreen")
                                 } else {
@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                             }
                         },
                         onSignUpClick = { email, password ->
-                            signUp(auth, email, password, context) { success ->
+                            signUp(auth, email, password) { success ->
                                 if (success) {
                                     navController.navigate("HomeScreen")
                                 } else {
@@ -76,11 +76,10 @@ class MainActivity : ComponentActivity() {
         auth: FirebaseAuth,
         email: String,
         password: String,
-        activity: ComponentActivity,
         onComplete: (Boolean) -> Unit
     ) {
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(activity) {
+            .addOnCompleteListener(this) {
                 onComplete(it.isSuccessful)
             }
     }
@@ -97,11 +96,10 @@ class MainActivity : ComponentActivity() {
         auth: FirebaseAuth,
         email: String,
         password: String,
-        activity: ComponentActivity,
         onComplete: (Boolean) -> Unit
     ) {
         auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(activity) {
+            .addOnCompleteListener(this) {
                 onComplete(it.isSuccessful)
             }
     }
