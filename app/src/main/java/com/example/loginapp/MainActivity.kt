@@ -28,25 +28,31 @@ class MainActivity : ComponentActivity() {
                 startDestination = startDestination
             ) {
                 composable(route = "SignInScreen") {
-                    val context = LocalContext.current as ComponentActivity
+                    val context = LocalContext.current
                     SignInScreen(
                         onSignInClick = { email, password ->
-                            signIn(auth, email, password, context) { success ->
+                            signIn(auth, email, password) { success ->
                                 if (success) {
                                     navController.navigate("HomeScreen")
                                 } else {
-                                    Toast.makeText(context, "ログインに失敗しました", Toast.LENGTH_SHORT)
-                                        .show()
+                                    Toast.makeText(
+                                        context,
+                                        getString(R.string.failed_sign_In_message),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             }
                         },
                         onSignUpClick = { email, password ->
-                            signUp(auth, email, password, context) { success ->
+                            signUp(auth, email, password) { success ->
                                 if (success) {
                                     navController.navigate("HomeScreen")
                                 } else {
-                                    Toast.makeText(context, "新規登録に失敗しました", Toast.LENGTH_SHORT)
-                                        .show()
+                                    Toast.makeText(
+                                        context,
+                                        getString(R.string.failed_sign_up_message),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                             }
                         }
@@ -70,12 +76,11 @@ class MainActivity : ComponentActivity() {
         auth: FirebaseAuth,
         email: String,
         password: String,
-        activity: ComponentActivity,
         onComplete: (Boolean) -> Unit
     ) {
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(activity) { task ->
-                onComplete(task.isSuccessful)
+            .addOnCompleteListener(this) {
+                onComplete(it.isSuccessful)
             }
     }
 
@@ -91,12 +96,11 @@ class MainActivity : ComponentActivity() {
         auth: FirebaseAuth,
         email: String,
         password: String,
-        activity: ComponentActivity,
         onComplete: (Boolean) -> Unit
     ) {
         auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(activity) { task ->
-                onComplete(task.isSuccessful)
+            .addOnCompleteListener(this) {
+                onComplete(it.isSuccessful)
             }
     }
 }
