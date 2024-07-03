@@ -39,12 +39,12 @@ class SignInViewModel : ViewModel() {
         _passwordErrorMessage.value = passwordErrorMessage
     }
 
-    fun validateEmpty(): Boolean {
+    fun validateEmpty(emailErrorMessage: String, passwordErrorMessage: String): Boolean {
         var isValid = true
 
         if (_email.value.isEmpty()) {
             _isEmailError.value = true
-            setEmailErrorMessage("メールアドレスを入力してください")
+            setEmailErrorMessage(emailErrorMessage)
             isValid = false
         } else {
             _isEmailError.value = false
@@ -53,7 +53,7 @@ class SignInViewModel : ViewModel() {
 
         if (_password.value.isEmpty()) {
             _isPasswordError.value = true
-            setPasswordErrorMessage("パスワードを入力してください")
+            setPasswordErrorMessage(passwordErrorMessage)
             isValid = false
         } else {
             _isPasswordError.value = false
