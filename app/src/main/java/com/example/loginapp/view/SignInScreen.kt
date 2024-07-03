@@ -46,6 +46,8 @@ fun SignInScreen(
     val isEmailError by signInViewModel.isEmailError.collectAsState()
     val isPasswordError by signInViewModel.isPasswordError.collectAsState()
 
+    val emailErrorText = stringResource(R.string.email_error_message)
+    val passwordErrorText = stringResource(R.string.password_error_text)
 
     Column(
         modifier = Modifier
@@ -109,7 +111,11 @@ fun SignInScreen(
 
         Button(
             onClick = {
-                if (signInViewModel.validateEmpty()) {
+                if (signInViewModel.validateEmpty(
+                        emailErrorText,
+                        passwordErrorText
+                    )
+                ) {
                     onSignInClick(email, password)
                 }
             },
@@ -125,7 +131,7 @@ fun SignInScreen(
 
         TextButton(
             onClick = {
-                if (signInViewModel.validateEmpty()) {
+                if (signInViewModel.validateEmpty(emailErrorText, passwordErrorText)) {
                     onSignUpClick(email, password)
                 }
             },
