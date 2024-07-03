@@ -10,7 +10,6 @@ local.properties
 *.log
 *.lock
 *.json
-*.xml
 *.db
 *.iml
 

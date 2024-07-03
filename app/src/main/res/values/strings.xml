@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="password_label_text">Password</string>
+    <string name="email_label_text">Email</string>
+    <string name="failed_sign_In_message">サインインに失敗しました</string>
+    <string name="failed_sign_up_message">新規登録に失敗しました</string>
+    <string name="email_error_message">メールアドレスを入力してください</string>
+    <string name="password_error_text">パスワードを入力してください</string>
+</resources>
